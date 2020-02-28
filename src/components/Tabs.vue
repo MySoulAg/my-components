@@ -1,4 +1,5 @@
 <template>
+  <!-- tab动画切换 组件 -->
   <div class="tabs">
     <ul>
       <li
@@ -18,7 +19,7 @@
         <transition :name="transitionDirection">
           <div v-show="index==activeItem" class="box">
             <div v-if="item.containt">
-              <div v-for="(item1,index1) in tabList[activeItem].containt" :key="index1">
+              <div v-for="(item1,index1) in item.containt" :key="index1">
                 <img style="width:100px" :src="item1.knwldgTitlePic" alt />
               </div>
             </div>
@@ -65,9 +66,10 @@ export default {
     },
 
     getList() {
+      //http://rap2.taobao.org:38080/app/mock/178194/newsList3
       let temActiveItem = this.activeItem;
       this.$axios
-        .post("http://rap2.taobao.org:38080/app/mock/178194/newsList3", {
+        .post("/app/web/public/remote", {
           application: "occ-klm-service",
           service: "/knwldgSrv/queryKnwldgInfList",
           object: {
