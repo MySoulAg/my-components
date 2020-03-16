@@ -2,15 +2,18 @@
   <div class="demo">
     <input-net-check></input-net-check>
     <tabs></tabs>
+    <swipe></swipe>
   </div>
 </template>
 <script>
 import InputNetCheck from "@/components/InputNetCheck";
 import Tabs from "@/components/Tabs";
+import Swipe from "@/components/Swipe";
 export default {
   components: {
     InputNetCheck,
-    Tabs
+    Tabs,
+    Swipe
   },
   data() {
     return {
