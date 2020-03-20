@@ -19,10 +19,14 @@
         <transition :name="transitionDirection">
           <div v-show="index==activeItem" class="box">
             <div v-if="item.containt">
-              <div v-for="(item1,index1) in item.containt" :key="index1">
-                <img style="width:100px" :src="item1.knwldgTitlePic" alt />
+              <div v-if="item.containt.length>0">
+                <div v-for="(item1,index1) in item.containt" :key="index1">
+                  <img style="width:100px" :src="item1.knwldgTitlePic" alt />
+                </div>
               </div>
+              <div v-else>暂无数据</div>
             </div>
+            <div v-else>加载中</div>
           </div>
         </transition>
       </div>
